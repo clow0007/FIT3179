@@ -15,7 +15,7 @@
         "data": {
           "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Week%209%20Homework/data/US_violent_crime.csv"
         },
-        "key": "Country",
+        "key": "State",
         "fields": ["Murder"]
       }
     },
