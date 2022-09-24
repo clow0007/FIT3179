@@ -3,6 +3,7 @@
   "width": 800,
   "height": 450,
   "title": "UNESCO heritage sites across the world",
+  "background": "#D8F9FF",
   "projection": {"type": "equirectangular"},
   "layer": [
     {
@@ -10,14 +11,14 @@
         "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Week_9_Homework/js/ne_50m.json",
         "format": {"type": "topojson", "feature": "ne_50m_admin_0_countries"}
       },
-      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+      "mark": {"type": "geoshape", "fill": "gray", "stroke": "white"}
     },
     {
       "data": {
         "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Week_9_Homework/js/ne_50m.json",
         "format": {"type": "topojson", "feature": "ne_50m_graticules_30"}
       },
-      "mark": {"type": "geoshape", "stroke": "wheat"}
+      "mark": {"type": "geoshape", "stroke": "lightgray"}
     },
     {
       "data": {
@@ -26,8 +27,10 @@
       "mark": {"type": "point", "tooltip": {"content": "data"}},
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
-        "latitude": {"field": "latitude", "type": "quantitative"}    
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "color": {"field": "category_long", "title": "Site Category"}    
       }
-  }
+    }
+
   ]
 }
