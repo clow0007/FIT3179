@@ -3,7 +3,6 @@
   "width": 800,
   "height": 450,
   "title": "UNESCO heritage sites across the world",
-  "background": "#D8F9FF",
   "projection": {"type": "equirectangular"},
   "layer": [
     {
@@ -12,6 +11,13 @@
         "format": {"type": "topojson", "feature": "ne_50m_admin_0_countries"}
       },
       "mark": {"type": "geoshape", "fill": "gray", "stroke": "white"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Week_9_Homework/js/ne_50m_ocean.json",
+        "format": {"type": "topojson", "feature": "ne_50m_ocean"}
+      },
+      "mark": {"type": "geoshape", "fill": "#D8F9FF"}
     },
     {
       "data": {
@@ -31,6 +37,5 @@
         "color": {"field": "category_long", "title": "Site Category"}    
       }
     }
-
   ]
 }
