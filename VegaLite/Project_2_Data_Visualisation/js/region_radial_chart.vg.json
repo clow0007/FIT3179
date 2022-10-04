@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 400,
+  "title": "Distribution of Heritage Sites Across Regions",
+  "data": {
+      "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Project_2_Data_Visualisation/data/whc-sites(tangibles)-2021.csv"
+  },
+  "layer": [{
+    "mark": 
+    {
+      "type": "arc", "innerRadius": 50, "stroke": "#fff"}
+    },
+    {
+      "mark": 
+      {
+        "type": "text", 
+        "radiusOffset": 10
+      },
+      "encoding": {
+        "text": 
+        {
+          "aggregate": "count", 
+          "field": "Region", 
+          "type": "quantitative"
+        }
+      }
+  }],
+  "encoding": {
+    "theta": 
+    {
+      "aggregate": "count", 
+      "field": "Region", 
+      "type": "quantitative", 
+      "stack": true
+    },
+    "radius": 
+    {
+      "aggregate": "count", 
+      "field": "Region", 
+      "scale": 
+      {
+        "type": "sqrt", 
+        "zero": true, 
+        "rangeMin": 50
+      }
+    },
+    "color": 
+    {
+      "field": "Region", 
+      "type": "nominal"
+    }
+  }
+
+}
