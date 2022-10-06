@@ -1,0 +1,115 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Status of Existing Heritage Sites",
+  "vconcat": [
+    {
+      "width": 500,
+      "data": {
+        "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Week_10_Homework/data/whc-sites(tangibles)-2021.csv"
+      },
+      "transform": 
+      [
+        {
+          "filter": "datum.date_end == ''"
+        }
+      ],
+      "mark": "bar",
+      "encoding": 
+      {
+        "x": 
+        {
+          "aggregate": "count",
+          "title": "Inscribed Sites", 
+          "type": "quantitative"
+        },
+        "color": 
+        {
+          "value": "#4b6043"
+        },
+        "tooltip": 
+        [
+          {
+            "aggregate": "count",
+            "title": "Number of Sites Inscribed"
+          }
+        ]
+      }
+    },
+    {
+      "width": 500,
+      "data": {
+        "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Week_10_Homework/data/whc-sites(tangibles)-2021.csv"
+      },
+      "transform": 
+      [
+        {
+          "filter": "datum.danger != 0"
+        }
+      ],
+      "mark": "bar",
+      "encoding": 
+      {
+        "y": 
+        {
+          "field": "danger", 
+          "type": "nominal",
+          "axis": null
+        },
+        "x": 
+        {
+          "aggregate": "count",
+          "field": "danger",
+          "title": "Sites in Danger", 
+          "type": "quantitative",
+          "scale": {"domain": [0, 1200]}
+        },
+        "color": 
+        {
+          "value": "#632d57"
+        },
+        "tooltip": 
+        [
+          {
+            "aggregate": "count",
+            "title": "Number of Sites in Danger"
+          }
+        ]
+      }
+    },
+    {
+      "width": 500,
+      "data": {
+        "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Week_10_Homework/data/whc-sites(tangibles)-2021.csv"
+      },
+      "transform": 
+      [
+        {
+          "filter": "datum.date_end != ''"
+        }
+      ],
+      "mark": "bar",
+      "encoding": 
+      {
+        "x": 
+        {
+          "aggregate": "count",
+          "type": "quantitative",
+          "title": "Sites Revoked",
+          "scale": {"domain": [0, 1200]}
+        },
+        "color": 
+        {
+          "value": "#ffef00"
+        },
+        "tooltip": 
+        [
+          {
+            "aggregate": "count",
+            "title": "Number of Sites Revoked"
+          }
+        ]
+      }
+    }
+    
+  ]
+}
