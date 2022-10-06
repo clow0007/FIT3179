@@ -2,56 +2,157 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A scatterplot showing horsepower and miles per gallons that opens a Google search for the car that you click on.",
   "data": {"url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Week_10_Homework/data/data_by_region.csv"},
-  "height": 500,
+  "height": 400,
   "width": 700,
   "title": "Comparison Between the Revenue And Total Visitors For Each Region In 2018",
   "transform": 
   [
     {
-      "filter": "datum.Year == 2018"
+      "filter": "Year_selection == null || datum.Year == Year_selection"
+    },
+    {
+      "filter": "Region_selection == null || datum.Region == Region_selection"
     }
   ],
-  "mark": "point",
-  "encoding": {
-    "x": 
+  "params": 
+  [
     {
-      "field": "Visitors_total", 
-      "type": "quantitative", 
-      "title": "Number of Visitors"
-    },
-    "y": 
-    {
-      "field": "Euro", 
-      "type": "quantitative", 
-      "title": "Revenue (Euro)",
-      "axis": 
+      "name": "Year_selection",
+      "bind": 
       {
-        "tickCount": 10
+        "input": "select",
+        "options": 
+        [
+          null,
+          2015,
+          2016,
+          2017,
+          2018
+        ],
+        "labels": 
+        [
+          "Show All",
+          "2015",
+          "2016",
+          "2017",
+          "2018"
+        ],
+        "name": "Year Selection: "
       }
     },
-    "color": 
     {
-      "field": "Region", 
-      "type": "nominal"
-    },
-    "tooltip": 
+      "name": "Region_selection",
+      "bind": 
+      {
+        "input": "select",
+        "options": 
+        [
+          null,
+          "ABRUZZO",
+          "BASILICATA",
+          "CALABRIA",
+          "CAMPANIA",
+          "EMILIA ROMAGNA",
+          "FRIULI-VENEZIA GIULIA",
+          "LAZIO",
+          "LIGURIA",
+          "LOMBARDIA",
+          "MARCHE",
+          "MOLISE",
+          "PIEMONTE",
+          "PUGLIA",
+          "SARDEGNA",
+          "TOSCANA",
+          "UMBRIA",
+          "VENETO"
+        ],
+        "labels": 
+        [
+          "Show All",
+          "Abruzzo",
+          "Basilicata",
+          "Calabria",
+          "Campania",
+          "Emilia Romagna",
+          "Friuli-Venezia Giulia",
+          "Lazio",
+          "Liguria",
+          "Lombardy",
+          "Marche",
+          "Molise",
+          "Piemonte",
+          "Puglia",
+          "Sardegna",
+          "Toscana",
+          "Umbria",
+          "Veneto"
+        ],
+        "name": "Region: "
+      }
+    }    
+  ],
+  "layer": 
+  [
     {
-      "field": "Region", 
-      "type": "nominal"
-    }
-  },
-  "selection": {
-    "grid_x": {
-      "type": "interval",
-      "bind": "scales",
-      "zoom": "wheel![event.ctrlKey]",
-      "encodings": ["x"]
+      "mark": "point",
+      "encoding": {
+        "x": 
+        {
+          "field": "Visitors_total", 
+          "type": "quantitative", 
+          "title": "Number of Visitors"
+        },
+        "y": 
+        {
+          "field": "Euro", 
+          "type": "quantitative", 
+          "title": "Revenue (Euro)",
+          "axis": 
+          {
+            "tickCount": 10
+          }
+        },
+        "color": 
+        {
+          "field": "Region", 
+          "type": "nominal"
+        },
+        "tooltip": 
+        [
+          {
+            "field": "Region", 
+            "type": "nominal",
+            "title": "Name"
+          },
+          {
+            "field": "Visitors_total",
+            "type": "quantitative",
+            "title": "Visitors"
+          },
+          {
+            "field": "Euro",
+            "type": "quantitative",
+            "title": "Revenue"
+          }
+        ]
+      },
+      "selection": {
+        "grid_x": {
+          "type": "interval",
+          "bind": "scales",
+          "zoom": "wheel![event.ctrlKey]",
+          "encodings": ["x"]
+        },
+        "grid_y": {
+          "type": "interval",
+          "bind": "scales",
+          "zoom": "wheel![!event.ctrlKey]",
+          "encodings": ["y"]
+        }
+      }
     },
-    "grid_y": {
-      "type": "interval",
-      "bind": "scales",
-      "zoom": "wheel![!event.ctrlKey]",
-      "encodings": ["y"]
+    {
+      "mark": "text"
     }
-  }
+  ]
 }
