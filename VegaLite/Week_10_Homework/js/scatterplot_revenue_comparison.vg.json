@@ -1,0 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A scatterplot showing horsepower and miles per gallons that opens a Google search for the car that you click on.",
+  "data": {"url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Week_10_Homework/data/data_by_region.csv"},
+  "height": 500,
+  "width": 700,
+  "title": "Comparison Between the Revenue And Total Visitors For Each Region In 2018",
+  "transform": 
+  [
+    {
+      "filter": "datum.Year == 2018"
+    }
+  ],
+  "mark": "point",
+  "encoding": {
+    "x": 
+    {
+      "field": "Visitors_total", 
+      "type": "quantitative", 
+      "title": "Number of Visitors"
+    },
+    "y": 
+    {
+      "field": "Euro", 
+      "type": "quantitative", 
+      "title": "Revenue (Euro)",
+      "axis": 
+      {
+        "tickCount": 10
+      }
+    },
+    "color": 
+    {
+      "field": "Region", 
+      "type": "nominal"
+    },
+    "tooltip": 
+    {
+      "field": "Region", 
+      "type": "nominal"
+    }
+  },
+  "selection": {
+    "grid_x": {
+      "type": "interval",
+      "bind": "scales",
+      "zoom": "wheel![event.ctrlKey]",
+      "encodings": ["x"]
+    },
+    "grid_y": {
+      "type": "interval",
+      "bind": "scales",
+      "zoom": "wheel![!event.ctrlKey]",
+      "encodings": ["y"]
+    }
+  }
+}
