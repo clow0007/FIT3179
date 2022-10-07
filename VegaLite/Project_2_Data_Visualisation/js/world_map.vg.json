@@ -69,7 +69,7 @@
   "projections": [
     {
       "name": "projection",
-      "type": "equirectangular",
+      "type": "equalEarth",
       "scale": {"signal": "scale"},
       "rotate": [{"signal": "rotateX"}, 0, 0],
       "center": [0, {"signal": "centerY"}],
@@ -79,11 +79,20 @@
   "data": [
     {
       "name": "world",
-      "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Project_2_Data_Visualisation/js/ne_110m_admin_0_countries_lakes.json",
+      "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Project_2_Data_Visualisation/js/ne_110m_admin_0_countries.json",
       "format": 
       {
         "type": "topojson",
-        "feature": "ne_110m_admin_0_countries_lakes"
+        "feature": "ne_110m_admin_0_countries"
+      }
+    },
+    {
+      "name": "ocean",
+      "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/Vega-Lite/Project_2_Data_Visualisation/js/oceans.json",
+      "format": 
+      {
+        "type": "topojson",
+        "feature": "oceans"
       }
     },
     {
@@ -113,6 +122,18 @@
   ],
   "marks": 
   [
+      {
+      "type": "shape",
+      "from": {"data": "ocean"},
+      "encode": {
+        "enter": {
+          "fill": {"value":"skyblue"}
+        }
+      },
+      "transform": [
+        { "type": "geoshape", "projection": "projection" }
+      ]
+    },
     {
       "type": "shape",
       "from": {"data": "world"},
