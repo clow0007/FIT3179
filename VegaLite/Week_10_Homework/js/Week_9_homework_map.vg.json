@@ -3,7 +3,10 @@
   "width": 1300,
   "height": 650,
   "title": "UNESCO heritage sites across the world",
-  "projection": {"type": "equirectangular"},
+  "projection": 
+  {
+    "type": "equirectangular"
+  },
   "layer": [
     {
       "data": {
@@ -39,7 +42,7 @@
           "bind": "legend"
         }
       },
-      "mark": {"type": "point"},
+      "mark": {"type": "circle"},
       "encoding": {
         "opacity":
         {

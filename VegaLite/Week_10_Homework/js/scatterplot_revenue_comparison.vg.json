@@ -4,7 +4,7 @@
   "data": {"url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Week_10_Homework/data/data_by_region.csv"},
   "height": 400,
   "width": 700,
-  "title": "Comparison Between the Revenue And Total Visitors For Each Region In 2018",
+  "title": "Comparison Between the Revenue And Total Visitors For Each Region In Italy (2015-2018)",
   "transform": 
   [
     {
