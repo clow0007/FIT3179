@@ -35,12 +35,30 @@
           "filter": "datum.iso_code == 'it'"
         }
       ],
+      "selection": 
+      {
+        "category_highlight":
+        {
+          "type": "multi",
+          "fields": ["category_long"],
+          "bind": "legend"
+        }
+      },
       "mark": 
       {
         "type": "point"
       },
       "encoding": 
       {
+        "opacity":
+        {
+          "condition":
+          {
+            "selection": "category_highlight",
+            "value": 0.6
+          },
+          "value": 0.2
+        },
         "longitude": 
         {
           "field": "longitude", 
