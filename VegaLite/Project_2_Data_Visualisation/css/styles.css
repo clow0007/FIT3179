@@ -1,26 +1,84 @@
+#background {
+  background-color: lavender;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+#page_title {
+  text-align: center;
+  font-family: 'Lucida Sans';
+  font-weight: bold;
+  font-size: 54px;
+  color: gold;
+  background-color: teal;
+}
+
+#content-background {
+  background-color: aliceblue;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#world_map_title {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+#world_map_body {
+  font-weight: lighter;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
 #world_map {
-	top:10px;
-	bottom: 10px; 
-	left: 10px;
-	right: 10px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+#category_trellis_area_title {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+#category_trellis_area {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 #region_radial_chart {
-  top:10px;
-  bottom: 100px;
-  left: 100px;
-  right: 100px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 #status_vconcat_bar_chart {
   bottom: 100px;
-  left: 200px;
-  right: 100px;
+  left: 50px;
 }
 
-#category_trellis_area {
-  top:80px;
-  bottom: 100px;
-  left: 100px;
-  right: 100px;
+#italy_map_title {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+#italy_map_body {
+  font-weight: lighter;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+#italy_map {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+#scatterplot_revenue_comparison {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }

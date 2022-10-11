@@ -11,16 +11,47 @@
 
 
 </head>
-<body>
-  
-  <h1>Project 2 Data Visualisation</h1>
-  <div id="world_map"></div>
-  
-  <div id="region_radial_chart"></div>
-  
-  <div id="status_vconcat_bar_chart"></div>
+<body id="background">
 
-  <div id="category_trellis_area"></div>
+  <div id="page_title">Project 2 Data Visualisation</div>
+
+  <div id="content-background">
+    <div id="world_map_title">UNESCO Heritage Sites Around The World
+      <div id="world_map_body">
+        World heritage sites are areas that are recognised as having significant cultural, natural or other forms of notable 
+        influence. The interactable map below shows the location of each site scattered across the world.
+      </div>
+      <div id="world_map"></div>
+      <div id="world_map_body">
+        From the map, it can be seen that a high number of heritage sites is concentrated in Europe. This is because of 
+        several reasons, such as the condition of the site, the financial and acedemic resources of the site's country, 
+        and the institution, UNESCO, which originated in Europe. Though an Eurocentric bias is not likely an intentional result 
+        (Reyes, 2019), UNESCO'S lack of transparency regarding its selection process can lead to unnecessary misunderstandings 
+        among nations.
+      </div>
+    </div>
+  </div>
+
+  <div id="content-background">
+    <div id="category_trellis_area"></div>
+  </div>
+
+  <div id="content-background">
+    <div id="region_radial_chart"></div>
+    <div id="status_vconcat_bar_chart"></div>
+  </div>
+
+  <div id="content-background">
+    <div id="italy_map_title">UNESCO Heritage Sites in Italy
+      <div id="italy_map_body">
+        Italy contains the most number of world heritage sites according to UNESCO as of 2021.
+      </div>
+      <div id="italy_map"></div>
+    </div>
+  </div>
+  <div id="content-background">
+    <div id="scatterplot_revenue_comparison"></div>
+  </div>
 
   <script type="text/javascript">
 
@@ -43,7 +74,18 @@
     vegaEmbed('#category_trellis_area', vg_4).then(function(result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
+
+    var vg_5 = "js/italy_map.vg.json"
+    vegaEmbed('#italy_map', vg_5).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var vg_6 = "js/scatterplot_revenue_comparison.vg.json"
+    vegaEmbed('#scatterplot_revenue_comparison', vg_6).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
   </script>
 
   </body>
+</body>
 </html>

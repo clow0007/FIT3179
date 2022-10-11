@@ -122,7 +122,7 @@
   ],
   "marks": 
   [
-      {
+    {
       "type": "shape",
       "from": {"data": "ocean"},
       "encode": {
@@ -173,7 +173,7 @@
           "x": {"field": "x"},
           "y": {"field": "y"},
           "tooltip": {
-            "signal": "{'Name': datum.Name, 'Country Code': datum.iso_code, 'Category': datum.category_long, 'Area (hectares)': datum.area_hectares, 'Description': datum.short_description}"
+            "signal": "{'Name': datum.Name, 'Country Code': datum.iso_code, 'Category': datum.category_long, 'Area (hectares)': datum.area_hectares, 'Description': replace(datum.short_description,'<p>', '')}" 
           }
         }
       }

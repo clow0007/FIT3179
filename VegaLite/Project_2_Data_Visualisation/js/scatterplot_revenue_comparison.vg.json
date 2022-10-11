@@ -1,0 +1,225 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A scatterplot showing horsepower and miles per gallons that opens a Google search for the car that you click on.",
+  "data": {"url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Project_2_Data_Visualisation/data/data_by_region.csv"},
+  "height": 400,
+  "width": 700,
+  "title": "Revenue And Total Visitors To A Cultural Heritage Site For Each Region In Italy (2015-2018)",
+  "transform": 
+  [
+    {
+      "filter": "Year_selection == null || datum.Year == Year_selection"
+    },
+    {
+      "filter": "Region_selection == null || datum.Region == Region_selection"
+    }
+  ],
+  "params": 
+  [
+    {
+      "name": "Year_selection",
+      "bind": 
+      {
+        "input": "select",
+        "options": 
+        [
+          null,
+          2015,
+          2016,
+          2017,
+          2018
+        ],
+        "labels": 
+        [
+          "Show All",
+          "2015",
+          "2016",
+          "2017",
+          "2018"
+        ],
+        "name": "Year Selection: "
+      }
+    },
+    {
+      "name": "Region_selection",
+      "bind": 
+      {
+        "input": "select",
+        "options": 
+        [
+          null,
+          "ABRUZZO",
+          "BASILICATA",
+          "CALABRIA",
+          "CAMPANIA",
+          "EMILIA ROMAGNA",
+          "FRIULI-VENEZIA GIULIA",
+          "LAZIO",
+          "LIGURIA",
+          "LOMBARDIA",
+          "MARCHE",
+          "MOLISE",
+          "PIEMONTE",
+          "PUGLIA",
+          "SARDEGNA",
+          "TOSCANA",
+          "UMBRIA",
+          "VENETO"
+        ],
+        "labels": 
+        [
+          "Show All",
+          "Abruzzo",
+          "Basilicata",
+          "Calabria",
+          "Campania",
+          "Emilia Romagna",
+          "Friuli-Venezia Giulia",
+          "Lazio",
+          "Liguria",
+          "Lombardy",
+          "Marche",
+          "Molise",
+          "Piemonte",
+          "Puglia",
+          "Sardegna",
+          "Toscana",
+          "Umbria",
+          "Veneto"
+        ],
+        "name": "Region: "
+      }
+    }    
+  ],
+  "encoding": {
+    "x": 
+    {
+      "field": "Visitors_total", 
+      "type": "quantitative", 
+      "title": "Number of Visitors"
+    },
+    "y": 
+    {
+      "field": "Euro", 
+      "type": "quantitative", 
+      "title": "Revenue (Euro)",
+      "axis": 
+      {
+        "tickCount": 10
+      }
+    },
+    "color": 
+    {
+      "field": "Region", 
+      "type": "nominal"
+    },
+    "tooltip": 
+    [
+      {
+        "field": "Region", 
+        "type": "nominal",
+        "title": "Name"
+      },
+      {
+        "field": "Visitors_total",
+        "type": "quantitative",
+        "title": "Visitors",
+        "format": ","
+      },
+      {
+        "field": "Euro",
+        "type": "quantitative",
+        "title": "Revenue (€)",
+        "format": ","
+      }
+    ]
+  },
+  "layer": 
+  [
+    {
+      "mark": "circle",
+      "selection": {
+        "grid_x": {
+          "type": "interval",
+          "bind": "scales",
+          "zoom": "wheel![event.ctrlKey]",
+          "encodings": ["x"]
+        },
+        "grid_y": {
+          "type": "interval",
+          "bind": "scales",
+          "zoom": "wheel![!event.ctrlKey]",
+          "encodings": ["y"]
+        }
+      }
+    },
+    {
+      "transform": 
+      [
+        {
+          "filter": "datum.Region == 'LAZIO' && datum.Year == '2018'"
+        },
+        {
+          "calculate": "'The capital city of Italy, Rome, is located in Lazio, and is well-known; for its cultural heritage, attracting visitors throughout the world'",
+          "as": "Lazio_text_raw"
+        },
+        {
+          "calculate": "split(datum.Lazio_text_raw,';')",
+          "as": "Lazio_text"
+        }
+      ],
+      "mark": 
+      {
+        "type": "text",
+        "align": "right",
+        "baseline": "top",
+        "dy": -15,
+        "dx": -5,
+        "fontSize": 12,
+        "fontStyle": "san-serif"
+      },
+      "encoding": 
+      {
+        "text": 
+        {
+          "field": "Lazio_text"
+        },
+        "color": {"value": "black"}
+      }
+    },
+    {
+      "transform": 
+      [
+        {
+          "filter": "datum.Region == 'MOLISE' && datum.Year == '2015'"
+        },
+        {
+          "calculate": "'Molise received the least number of visitors in 2015'",
+          "as": "Molise_text_raw"
+        },
+        {
+          "calculate": "split(datum.Molise_text_raw,';')",
+          "as": "Molise_text"
+        }
+      ],
+      "mark": 
+      {
+        "type": "text",
+        "align": "left",
+        "baseline": "top",
+        "dy": -15,
+        "dx": 25,
+        "fontSize": 12,
+        "fontStyle": "san-serif"
+      },
+      "encoding": 
+      {
+        "text": 
+        {
+          "field": "Molise_text"
+        },
+        "color": {"value": "black"}
+      }
+    }
+  ]
+}

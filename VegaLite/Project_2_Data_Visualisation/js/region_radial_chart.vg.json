@@ -1,8 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 400,
+  "width": 380,
   "height": 400,
   "title": "Distribution of Heritage Sites Across Regions",
+  "background":"aliceblue",
   "data": {
       "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Project_2_Data_Visualisation/data/whc-sites(tangibles)-2021.csv"
   },

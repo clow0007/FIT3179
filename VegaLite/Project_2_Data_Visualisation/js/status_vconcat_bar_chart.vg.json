@@ -1,6 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Status of Existing Heritage Sites",
+  "background": "aliceblue",
   "vconcat": [
     {
       "width": 500,
