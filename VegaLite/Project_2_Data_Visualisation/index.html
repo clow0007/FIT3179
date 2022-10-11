@@ -19,7 +19,9 @@
     <div id="world_map_title">UNESCO Heritage Sites Around The World
       <div id="world_map_body">
         World heritage sites are areas that are recognised as having significant cultural, natural or other forms of notable 
-        influence. The interactable map below shows the location of each site scattered across the world.
+        influence. Awarded by the United Nation-affiliated organisation <b id="bold_text">UNESCO</b>, heritage sites are coveted due to the prestige 
+        and status it brings to the host nation of the site. The interactable map below shows the location of each site scattered 
+        across the world.
       </div>
       <div id="world_map"></div>
       <div id="world_map_body">
@@ -44,13 +46,18 @@
   <div id="content-background">
     <div id="italy_map_title">UNESCO Heritage Sites in Italy
       <div id="italy_map_body">
-        Italy contains the most number of world heritage sites according to UNESCO as of 2021.
+        Italy contains the most number of world heritage sites according to UNESCO as of 2021. The map below details the 
+        specific locations of categorised sites in Italy.
       </div>
       <div id="italy_map"></div>
     </div>
   </div>
   <div id="content-background">
     <div id="scatterplot_revenue_comparison"></div>
+  </div>
+  <div id="content-background">
+    <div id="italy_type_visitors_lollipop"></div>
+    <div id="italy_type_revenue_lollipop"></div>
   </div>
 
   <script type="text/javascript">
@@ -82,6 +89,16 @@
 
     var vg_6 = "js/scatterplot_revenue_comparison.vg.json"
     vegaEmbed('#scatterplot_revenue_comparison', vg_6).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var vg_7 = "js/italy_type_visitors_lollipop.vg.json"
+    vegaEmbed('#italy_type_visitors_lollipop', vg_7).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var vg_8 = "js/italy_type_revenue_lollipop.vg.json"
+    vegaEmbed('#italy_type_revenue_lollipop', vg_8).then(function(result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
   </script>

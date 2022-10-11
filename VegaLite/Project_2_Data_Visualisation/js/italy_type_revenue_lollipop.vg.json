@@ -1,0 +1,96 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 300,
+  "title": "Revenue Across Different Types",
+  "data": 
+  {
+    "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Project_2_Data_Visualisation/data/data_by_type.csv"},
+  "transform": 
+  [
+    {
+      "filter": "Type_selection == '' || datum.Type == Type_selection"
+    }
+  ],
+  "params": 
+  [
+    {
+      "name": "Type_selection",
+      "value": "MU",
+      "bind":
+      {
+        "input": "select",
+        "options": 
+        [
+          "MU",
+          "MOAA",
+          "CIMU"
+        ],
+        "labels": 
+        [
+          "Museums",
+          "Monuments and archaelogical parks",
+          "Museum networks"
+        ],
+        "name": "Type: "
+      }
+    }
+  ],
+  "layer":
+  [
+    {
+      "mark": 
+      {
+        "type": "bar"
+      },
+      "encoding": 
+      {
+        "x": 
+        {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y":
+        {
+          "field": "Euro",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark":
+      {
+        "type": "point",
+        "tooltip": true
+      },
+      "encoding": 
+      {
+        "x":
+        {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": 
+        {
+          "field": "Euro",
+          "type": "quantitative"
+        }
+      }
+    }
+  ],
+  "config": 
+  {
+    "bar": 
+    {
+      "color": "black",
+      "width": 2
+    },
+    "point": 
+    {
+      "filled": true,
+      "size": 150,
+      "opacity": 1,
+      "color": "seagreen"
+    }
+  }
+}

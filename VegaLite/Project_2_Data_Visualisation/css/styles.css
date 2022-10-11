@@ -20,6 +20,11 @@
   margin-bottom: 40px;
 }
 
+#bold_text {
+  font-size: large;
+  color: mediumslateblue;
+}
+
 #world_map_title {
   text-align: center;
   font-family: sans-serif;
@@ -31,6 +36,8 @@
   font-weight: lighter;
   font-size: 16px;
   margin-top: 10px;
+  margin-left: 110px;
+  margin-right: 110px;
 }
 
 #world_map {
@@ -79,6 +86,11 @@
 }
 
 #scatterplot_revenue_comparison {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#italy_type_visitors_lollipop {
   margin-top: 40px;
   margin-bottom: 40px;
 }
