@@ -45,16 +45,27 @@
   margin-bottom: 20px;
 }
 
-#category_trellis_area_title {
-  text-align: center;
+#category_trellis_area_body {
   font-family: sans-serif;
-  font-weight: bold;
-  font-size: 32px;
+  font-weight: lighter;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 110px;
+  margin-right: 110px;
 }
 
 #category_trellis_area {
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+#region_status_body {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 110px;
+  margin-right: 110px;
 }
 
 #region_radial_chart {
@@ -85,9 +96,27 @@
   margin-bottom: 40px;
 }
 
+#scatterplot_revenue_comparison_body {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 110px;
+  margin-right: 110px;
+}
+
 #scatterplot_revenue_comparison {
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+#italy_visitors_revenue_body {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 110px;
+  margin-right: 110px;
 }
 
 #italy_type_visitors_lollipop {

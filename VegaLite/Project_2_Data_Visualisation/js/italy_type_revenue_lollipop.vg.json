@@ -3,6 +3,7 @@
   "width": 500,
   "height": 300,
   "title": "Revenue Across Different Types",
+  "background":"aliceblue",
   "data": 
   {
     "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Project_2_Data_Visualisation/data/data_by_type.csv"},

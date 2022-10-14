@@ -6,6 +6,7 @@
   "height": 150,
   "data": {"url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Project_2_Data_Visualisation/data/whc-sites(tangibles)-2021.csv"},
   "mark": "area",
+  "background":"aliceblue",
   "encoding": 
   {
     "x": 
