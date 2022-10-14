@@ -47,7 +47,7 @@
 }
 
 #category_trellis_area_body {
-  font-family: sans-serif;
+  font-family: Arial;
   font-weight: lighter;
   font-size: 16px;
   margin-top: 10px;
@@ -61,7 +61,7 @@
 }
 
 #region_status_body {
-  font-family: sans-serif;
+  font-family: Arial;
   font-weight: lighter;
   font-size: 16px;
   margin-top: 10px;
@@ -87,6 +87,7 @@
 }
 
 #italy_map_body {
+  font-family: Arial;
   font-weight: lighter;
   font-size: 16px;
   margin-top: 10px;
@@ -98,7 +99,7 @@
 }
 
 #scatterplot_revenue_comparison_body {
-  font-family: sans-serif;
+  font-family: Arial;
   font-weight: lighter;
   font-size: 16px;
   margin-top: 10px;
@@ -112,7 +113,7 @@
 }
 
 #italy_visitors_revenue_body {
-  font-family: sans-serif;
+  font-family: Arial;
   font-weight: lighter;
   font-size: 16px;
   margin-top: 10px;
