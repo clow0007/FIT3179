@@ -16,7 +16,6 @@
 #content-background {
   background-color: aliceblue;
   text-align: center;
-  font-family: 'Lucida Sans';
   margin-top: 40px;
   margin-bottom: 40px;
 }
@@ -28,7 +27,7 @@
 
 #world_map_title {
   text-align: center;
-  font-family: sans-serif;
+  font-family: Arial;
   font-weight: bold;
   font-size: 32px;
 }
@@ -48,7 +47,6 @@
 
 #category_trellis_area_body {
   font-family: Arial;
-  font-weight: lighter;
   font-size: 16px;
   margin-top: 10px;
   margin-left: 110px;
@@ -62,7 +60,6 @@
 
 #region_status_body {
   font-family: Arial;
-  font-weight: lighter;
   font-size: 16px;
   margin-top: 10px;
   margin-left: 110px;
@@ -81,7 +78,7 @@
 
 #italy_map_title {
   text-align: center;
-  font-family: sans-serif;
+  font-family: Arial;
   font-weight: bold;
   font-size: 32px;
 }
@@ -100,7 +97,6 @@
 
 #scatterplot_revenue_comparison_body {
   font-family: Arial;
-  font-weight: lighter;
   font-size: 16px;
   margin-top: 10px;
   margin-left: 110px;
@@ -114,7 +110,6 @@
 
 #italy_visitors_revenue_body {
   font-family: Arial;
-  font-weight: lighter;
   font-size: 16px;
   margin-top: 10px;
   margin-left: 110px;
