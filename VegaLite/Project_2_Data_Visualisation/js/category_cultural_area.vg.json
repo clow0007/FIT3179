@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Distribution of Heritage Sites Across Categories",
+  "description": "Comparing the distribution of heritage sites between different categories across time",
+  "width": 1100,
+  "height": 200,
+  "background": "aliceblue",
+  "layer": 
+  [
+    {
+      "data": {"url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Project_2_Data_Visualisation/data/whc-sites(tangibles)-2021.csv"},
+      "transform": 
+      [
+        {
+          "filter": "datum.category_long == 'Cultural'"
+        }
+      ],
+      "mark": "area",
+      "encoding": 
+      {
+        "x": 
+        {
+          "field": "date_inscribed",
+          "type": "nominal",
+          "title": "Year",
+          "axis": null
+        },
+        "y": 
+        {
+          "aggregate": "count",
+          "field": "category_long",
+          "type": "quantitative",
+          "title": "Number of Sites",
+          "axis": 
+          {
+            "grid": false
+          }
+        },
+        "color": 
+        {
+          "field": "category_long",
+          "type": "nominal",
+          "legend": null
+        }
+      }
+    }
+  ]
+}
