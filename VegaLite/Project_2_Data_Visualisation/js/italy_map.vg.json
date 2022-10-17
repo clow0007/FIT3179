@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 1000,
+  "width": 1035,
   "height": 500,
   "projection": {"type": "equalEarth"},
   "background": "aliceblue",
@@ -32,7 +32,15 @@
       "transform": 
       [
         {
-          "filter": "datum.iso_code == 'it'"
+          "filter": "datum.iso_code == 'it' || datum.iso_code == 'it,va'"
+        },
+        {
+          "calculate": "replace(datum.short_description, '<p>', '')",
+          "as": "description_raw"
+        },
+        {
+          "calculate": "replace(datum.description_raw, '</p>', '')",
+          "as": "description"
         }
       ],
       "selection": 
@@ -72,7 +80,15 @@
         "color": 
         {
           "field": "category_long", 
-          "title": "Site Category"
+          "title": "Site Category",
+          "scale": 
+          {
+            "range": 
+            [
+              "#332288",
+              "#44AA99"
+            ]
+          }
         },
         "tooltip":
         [
@@ -91,11 +107,177 @@
             "title": "Area (hectares)"
           },
           {
-            "field": "short_description",
+            "field": "description",
             "type": "nominal",
             "title": "Description"
+          },
+          {
+            "field": "transboundary",
+            "type": "nominal",
+            "title": "Transboundary"
           }
         ] 
+      }
+    },
+    {
+      "data": 
+      {
+        "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Week_9_Homework/data/whc-sites(tangibles)-2021.csv"
+      },
+      "transform": 
+      [
+        {
+          "filter": "datum.iso_code == 'it' || datum.iso_code == 'it,va'"
+        },
+        {
+          "calculate": "replace(datum.short_description, '<p>', '')",
+          "as": "description"
+        }
+      ],
+      "mark": "text"
+    },
+    {
+      "data": 
+      {
+        "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Week_9_Homework/data/whc-sites(tangibles)-2021.csv"
+      },
+      "transform": 
+      [
+        {
+          "filter": "datum.iso_code == 'it,va'"
+        },
+        {
+          "calculate": "'The world heritage site of Rome, which ;contains unique buildings and landmarks, ;is shared by Italy with the Holy See'",
+          "as": "Rome_text_raw"
+        },
+        {
+          "calculate": "split(datum.Rome_text_raw,';')",
+          "as": "Rome_text"
+        }
+      ],
+      "mark": 
+      {
+        "type": "text",
+        "dx": -80,
+        "dy": 5,
+        "fontSize": 12,
+        "font": "Arial"
+      },
+      "encoding": 
+      {
+        "text": 
+        {
+          "field": "Rome_text"
+        },
+        "color": {"value": "black"}
+      }
+    },
+    {
+      "data": 
+      {
+        "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Week_9_Homework/data/whc-sites(tangibles)-2021.csv"
+      },
+      "transform": 
+      [
+        {
+          "filter": "datum.Name == 'The Porticoes of Bologna'"
+        },
+        {
+          "calculate": "'The Fresco Cycles of Padua as well as ;the Porticoes of Bologna are the ;latest sites to be inscribed for Italy'",
+          "as": "latest_text_raw"
+        },
+        {
+          "calculate": "split(datum.latest_text_raw,';')",
+          "as": "latest_text"
+        }
+      ],
+      "mark": 
+      {
+        "type": "text",
+        "dx": 90,
+        "dy": -160,
+        "fontSize": 12,
+        "font": "Arial"
+      },
+      "encoding": 
+      {
+        "text": 
+        {
+          "field": "latest_text"
+        },
+        "color": {"value": "black"}
+      }
+    },
+    {
+      "data": 
+      {
+        "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Week_9_Homework/data/whc-sites(tangibles)-2021.csv"
+      },
+      "transform": 
+      [
+        {
+          "filter": "datum.Name == 'Rock Drawings in Valcamonica'"
+        },
+        {
+          "calculate": "'The Rock Drawings in Valcamonica in Brescia ;was the first heritage site inscribed in Italy'",
+          "as": "first_text_raw"
+        },
+        {
+          "calculate": "split(datum.first_text_raw,';')",
+          "as": "first_text"
+        }
+      ],
+      "mark": 
+      {
+        "type": "text",
+        "dx": -185,
+        "dy": -230,
+        "fontSize": 12,
+        "font": "Arial"
+      },
+      "encoding": 
+      {
+        "text": 
+        {
+          "field": "first_text"
+        },
+        "color": {"value": "black"}
+      }
+    },
+    {
+      "data": 
+      {
+        "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Week_9_Homework/data/whc-sites(tangibles)-2021.csv"
+      },
+      "transform": 
+      [
+        {
+          "filter": "datum.Name == 'Cilento and Vallo di Diano National Park with the Archeological Sites of Paestum and Velia, and the Certosa di Padula'"
+        },
+        {
+          "calculate": "'The Cilento and Vallo di Diano National ;Park is the largest heritage site in Italy'",
+          "as": "largest_text_raw"
+        },
+        {
+          "calculate": "split(datum.largest_text_raw,';')",
+          "as": "largest_text"
+        }
+      ],
+      "mark": 
+      {
+        "type": "text",
+        "dx": 120,
+        "dy": 85,
+        "fontSize": 12,
+        "font": "Arial"
+      },
+      "encoding": 
+      {
+        "text": 
+        {
+          "field": "largest_text"
+        },
+        "color": {"value": "black"}
       }
     }
   ]

@@ -1,8 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 380,
-  "height": 400,
-  "title": "Distribution of Heritage Sites Across Regions",
+  "width": 450,
+  "height": 250,
+  "title": 
+  {
+    "text": "Distribution of Heritage Sites Across Regions",
+    "fontSize": 16
+  },
   "background":"aliceblue",
   "data": {
       "url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Project_2_Data_Visualisation/data/whc-sites(tangibles)-2021.csv"
@@ -10,7 +14,7 @@
   "layer": [{
     "mark": 
     {
-      "type": "arc", "innerRadius": 50, "stroke": "#fff"}
+      "type": "arc", "innerRadius": 30, "stroke": "#fff"}
     },
     {
       "mark": 
@@ -61,7 +65,17 @@
           "#648FFF"
         ]
       }
-    }
+    },
+    "tooltip": 
+    [
+      {
+        "aggregate": "count",
+        "title": "Number Of Heritage Sites"
+      },
+      {
+        "field": "Region"
+      }
+    ]
   }
 
 }

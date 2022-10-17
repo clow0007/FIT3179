@@ -1,9 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Distribution Of Heritage Sites Across Categories",
-    "fontSize": 16
-  },
   "description": "Comparing the distribution of heritage sites between different categories across time",
   "width": 1100,
   "height": 175,
@@ -15,7 +11,7 @@
       "transform": 
       [
         {
-          "filter": "datum.category_long == 'Cultural'"
+          "filter": "datum.category_long == 'Mixed'"
         }
       ],
       "mark": "area",
@@ -26,13 +22,19 @@
           "field": "date_inscribed",
           "timeUnit": "year",
           "title": "Year",
-          "axis": null
+          "axis":
+          {
+            "grid": false
+          }
         },
         "y": 
         {
           "aggregate": "count",
           "type": "quantitative",
-          "title": "Cultural Sites",
+          "title": "Mixed Sites",
+          "scale": {
+            "domainMax": 50
+          },
           "axis": 
           {
             "grid": false
@@ -40,7 +42,7 @@
         },
         "color":
         {
-          "value": "#332288"
+          "value": "#882255"
         }
       }
     },
@@ -48,22 +50,21 @@
       "transform": 
       [
         {
-          "filter": "datum.Name == 'Wachau Cultural Landscape'"
+          "filter": "datum.Name == 'Kakadu National Park'"
         },
         {
-          "calculate": "'UNESCO inscribed the highest number ;of cultural heritage sites in 2000'",
-          "as": "cultural_text_raw"
+          "calculate": "'Mixed heritage sites are the least inscribed ;sites, totalling at about 39 sites as of 2021'",
+          "as": "mixed_text_raw"
         },
         {
-          "calculate": "split(datum.cultural_text_raw, ';')",
-          "as": "cultural_text"
+          "calculate": "split(datum.mixed_text_raw, ';')",
+          "as": "mixed_text"
         }
       ],
       "mark": 
       {
         "type": "text",
-        "dx": 130,
-        "dy": -70,
+        "dy": 40,
         "fontSize": 12,
         "font": "Arial"
       },
@@ -71,7 +72,7 @@
       {
         "text": 
         {
-          "field": "cultural_text"
+          "field": "mixed_text"
         },
         "color": {"value": "black"}
       }

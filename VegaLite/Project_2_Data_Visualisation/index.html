@@ -13,20 +13,20 @@
 </head>
 <body id="background">
 
-  <div id="page_title">Project 2 Data Visualisation</div>
+  <div id="page_title">AN OUTLOOK INTO WORLD HERITAGE SITES</div>
 
   <div id="content-background">
     <div id="world_map_title">UNESCO Heritage Sites Around The World
       <div id="world_map_body">
         World heritage sites are areas that are recognised as having significant cultural, natural or other forms of notable 
-        influence. Awarded by the United Nation-affiliated organisation <b id="bold_text">UNESCO</b>, heritage sites are coveted due to the prestige 
-        and status it brings to the host nation of the site. The interactable map below shows the <b id="bold_text">location</b> of each site scattered 
-        across the world.
+        <b id="bold_text">influence</b>. Awarded by the United Nations-affiliated organisation <b id="bold_text">UNESCO</b>, 
+        heritage sites are coveted due to the <b id="bold_text">prestige</b> and <b id="bold_text">status</b> it brings to the host nation of the site. The interactable 
+        map below shows the <b id="bold_text">location</b> of each site scattered across the world.
       </div>
       <div id="world_map"></div>
       <div id="world_map_body">
         From the map, it can be seen that a high number of heritage sites is <b id="bold_text">concentrated</b> in Europe. This is because of 
-        several reasons, such as the condition of the site, the financial and acedemic resources of the site's country, 
+        several reasons, such as the <b id="bold_text">condition</b> of the site,
         and the institution, UNESCO, which <b id ="bold_text">originated in Europe</b>. Though an Eurocentric bias is not likely an intentional result 
         (Reyes, 2019), UNESCO'S <b id="bold_text">lack of transparency</b> regarding its selection process can lead to unnecessary misunderstandings 
         among nations.
@@ -39,12 +39,14 @@
     <br>
     <div id="category_trellis_area_title">
       <div id="category_trellis_area_body">
-        UNESCO heritage sites are commonly divided across three categories, which are <b id ="bold_text">cultural</b>, 
+        UNESCO heritage sites are commonly divided across three <b id="bold_text">categories</b>, which are <b id ="bold_text">cultural</b>, 
         <b id ="bold_text">natural</b> or <b id ="bold_text">mixed</b>, a combination of both cultural and natural sites. 
         Cultural sites, which celebrate architectural landmarks, usually built by humans, are the most 
         <b id ="bold_text">abundant</b> heritage sites.
       </div>
-      <div id="category_trellis_area"></div>
+      <div id="category_cultural_area"></div>
+      <div id="category_natural_area"></div>
+      <div id="category_mixed_area"></div>
     </div>
   </div>
 
@@ -92,8 +94,8 @@
         in the Italian Senate. The chart below shows the amount of <b id ="bold_text">visitors</b> and <b id ="bold_text">revenue</b> 
         generated through visits to Italian cultural heritage from <b id ="bold_text">2015 to 2018</b>.
       </div>
-      <div id="scatterplot_revenue_comparison"></div>
     </div>
+    <div id="scatterplot_revenue_comparison"></div>
   </div>
   
   <div id="content-background">
@@ -104,50 +106,60 @@
         as an overall <b id ="bold_text">increase in revenue</b> generated through them. This help proves that having an abundance of world
         heritage sites can improve the <b id ="bold_text">prestige</b> and <b id ="bold_text">economic</b> prospects of a country.
       </div>
-      <div id="italy_type_visitors_lollipop"></div>
-      <div id="italy_type_revenue_lollipop"></div>
     </div>
+    <div id="italy_type_visitors_lollipop"></div>
+    <div id="italy_type_revenue_lollipop"></div>
   </div>
 
   <script type="text/javascript">
 
     var vg_1 = "js/world_map.vg.json";
-    vegaEmbed('#world_map', vg_1).then(function(result) {
+    vegaEmbed('#world_map', vg_1, {"actions": false}).then(function(result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
-    var vg_2 = "js/region_radial_chart.vg.json"
-    vegaEmbed('#region_radial_chart', vg_2).then(function(result) {
+    var vg_2 = "js/category_cultural_area.vg.json"
+    vegaEmbed('#category_cultural_area', vg_2, {"actions": false}).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    
+    var vg_3 = "js/category_natural_area.vg.json"
+    vegaEmbed('#category_natural_area', vg_3, {"actions": false}).then(function(result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
-    var vg_3 = "js/status_vconcat_bar_chart.vg.json"
-    vegaEmbed('#status_vconcat_bar_chart', vg_3).then(function(result) {
+    var vg_4 = "js/category_mixed_area.vg.json"
+    vegaEmbed('#category_mixed_area', vg_4, {"actions": false}).then(function(result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
-    var vg_4 = "js/category_trellis_area.vg.json"
-    vegaEmbed('#category_trellis_area', vg_4).then(function(result) {
+    var vg_5 = "js/region_radial_chart.vg.json"
+    vegaEmbed('#region_radial_chart', vg_5, {"actions": false}).then(function(result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
-    var vg_5 = "js/italy_map.vg.json"
-    vegaEmbed('#italy_map', vg_5).then(function(result) {
+    var vg_6 = "js/status_vconcat_bar_chart.vg.json"
+    vegaEmbed('#status_vconcat_bar_chart', vg_6, {"actions": false}).then(function(result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
-    var vg_6 = "js/scatterplot_revenue_comparison.vg.json"
-    vegaEmbed('#scatterplot_revenue_comparison', vg_6).then(function(result) {
+    var vg_7 = "js/italy_map.vg.json"
+    vegaEmbed('#italy_map', vg_7, {"actions": false}).then(function(result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
-    var vg_7 = "js/italy_type_visitors_lollipop.vg.json"
-    vegaEmbed('#italy_type_visitors_lollipop', vg_7).then(function(result) {
+    var vg_8 = "js/scatterplot_revenue_comparison.vg.json"
+    vegaEmbed('#scatterplot_revenue_comparison', vg_8, {"actions": false}).then(function(result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
-    var vg_8 = "js/italy_type_revenue_lollipop.vg.json"
-    vegaEmbed('#italy_type_revenue_lollipop', vg_8).then(function(result) {
+    var vg_9 = "js/italy_type_visitors_lollipop.vg.json"
+    vegaEmbed('#italy_type_visitors_lollipop', vg_9, {"actions": false}).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var vg_10 = "js/italy_type_revenue_lollipop.vg.json"
+    vegaEmbed('#italy_type_revenue_lollipop', vg_10, {"actions": false}).then(function(result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
   </script>

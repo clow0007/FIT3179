@@ -1,6 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Status of Existing Heritage Sites",
+  "title": 
+  {
+    "text": "Status of Existing Heritage Sites",
+    "fontSize": 16
+  },
   "background": "aliceblue",
   "vconcat": [
     {
@@ -95,7 +99,7 @@
         {
           "aggregate": "count",
           "type": "quantitative",
-          "title": "Sites Revoked",
+          "title": "Sites Revoked From World Heritage Or Removed From Endangerment",
           "scale": {"domain": [0, 1200]}
         },
         "color": 
@@ -106,7 +110,7 @@
         [
           {
             "aggregate": "count",
-            "title": "Number of Sites Revoked"
+            "title": "Number of Sites Revoked or Removed"
           }
         ]
       }

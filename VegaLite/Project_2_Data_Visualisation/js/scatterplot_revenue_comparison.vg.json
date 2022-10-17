@@ -1,10 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A scatterplot showing horsepower and miles per gallons that opens a Google search for the car that you click on.",
+  "description": "A scatterplot showing the comparison in revenue and visitors between the regions in Italy.",
   "data": {"url": "https://raw.githubusercontent.com/clow0007/FIT3179/main/VegaLite/Project_2_Data_Visualisation/data/data_by_region.csv"},
   "height": 400,
-  "width": 700,
-  "title": "Revenue And Total Visitors To A Cultural Heritage Site For Each Region In Italy (2015-2018)",
+  "width": 880,
+  "title": 
+  {
+    "text": "Revenue And Total Visitors To A Cultural Heritage Site For Each Region In Italy (2015-2018)",
+    "fontSize": 16
+  },
   "background":"aliceblue",
   "transform": 
   [
@@ -177,7 +181,7 @@
         "dy": -15,
         "dx": -5,
         "fontSize": 12,
-        "fontStyle": "san-serif"
+        "font": "Arial"
       },
       "encoding": 
       {
@@ -209,15 +213,49 @@
         "align": "left",
         "baseline": "top",
         "dy": -15,
-        "dx": 25,
+        "dx": 40,
         "fontSize": 12,
-        "fontStyle": "san-serif"
+        "font": "Arial"
       },
       "encoding": 
       {
         "text": 
         {
           "field": "Molise_text"
+        },
+        "color": {"value": "black"}
+      }
+    },
+    {
+      "transform": 
+      [
+        {
+          "filter": "datum.Region == 'CAMPANIA' && datum.Year == '2016'"
+        },
+        {
+          "calculate": "'The Campania region contains the historic city of Naples, which features ;famous archaelogical areas such as Herculaneum and Pompeii'",
+          "as": "Campania_text_raw"
+        },
+        {
+          "calculate": "split(datum.Campania_text_raw,';')",
+          "as": "Campania_text"
+        }
+      ],
+      "mark": 
+      {
+        "type": "text",
+        "align": "left",
+        "baseline": "top",
+        "dx": 10,
+        "dy": -10,
+        "fontSize": 12,
+        "font": "Arial"
+      },
+      "encoding": 
+      {
+        "text": 
+        {
+          "field": "Campania_text"
         },
         "color": {"value": "black"}
       }

@@ -1,8 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 500,
+  "width": 475,
   "height": 300,
-  "title": "Revenue Across Different Types",
+  "title": 
+  {
+    "text": "Revenue Across Different Types",
+    "fontSize": 16
+  },
   "background":"aliceblue",
   "data": 
   {

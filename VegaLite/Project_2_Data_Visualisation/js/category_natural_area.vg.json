@@ -1,9 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Distribution Of Heritage Sites Across Categories",
-    "fontSize": 16
-  },
   "description": "Comparing the distribution of heritage sites between different categories across time",
   "width": 1100,
   "height": 175,
@@ -15,7 +11,7 @@
       "transform": 
       [
         {
-          "filter": "datum.category_long == 'Cultural'"
+          "filter": "datum.category_long == 'Natural'"
         }
       ],
       "mark": "area",
@@ -32,7 +28,10 @@
         {
           "aggregate": "count",
           "type": "quantitative",
-          "title": "Cultural Sites",
+          "title": "Natural Sites",
+          "scale": {
+            "domainMax": 50
+          },
           "axis": 
           {
             "grid": false
@@ -40,7 +39,7 @@
         },
         "color":
         {
-          "value": "#332288"
+          "value": "#44AA99"
         }
       }
     },
@@ -48,22 +47,20 @@
       "transform": 
       [
         {
-          "filter": "datum.Name == 'Wachau Cultural Landscape'"
+          "filter": "datum.Name == 'Great Barrier Reef'"
         },
         {
-          "calculate": "'UNESCO inscribed the highest number ;of cultural heritage sites in 2000'",
-          "as": "cultural_text_raw"
+          "calculate": "'Natural heritage sites feature sites with natural beauty, phenomena or contain important ;natural habitats, which could contain rare and exotic species of fauna and flora'",
+          "as": "natural_text_raw"
         },
         {
-          "calculate": "split(datum.cultural_text_raw, ';')",
-          "as": "cultural_text"
+          "calculate": "split(datum.natural_text_raw, ';')",
+          "as": "natural_text"
         }
       ],
       "mark": 
       {
         "type": "text",
-        "dx": 130,
-        "dy": -70,
         "fontSize": 12,
         "font": "Arial"
       },
@@ -71,7 +68,7 @@
       {
         "text": 
         {
-          "field": "cultural_text"
+          "field": "natural_text"
         },
         "color": {"value": "black"}
       }

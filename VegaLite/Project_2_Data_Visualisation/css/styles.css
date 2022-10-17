@@ -1,14 +1,14 @@
 #background {
   background-color: lavender;
-  margin-right: 100px;
-  margin-left: 100px;
+  margin-right: 150px;
+  margin-left: 150px;
 }
 
 #page_title {
   text-align: center;
   font-family: 'Lucida Sans';
   font-weight: bold;
-  font-size: 54px;
+  font-size: 32px;
   color: gold;
   background-color: teal;
 }
@@ -21,7 +21,7 @@
 }
 
 #bold_text {
-  font-size: large;
+  font-size: 20px;
   color: mediumslateblue;
 }
 
@@ -36,8 +36,8 @@
   font-weight: lighter;
   font-size: 16px;
   margin-top: 10px;
-  margin-left: 110px;
-  margin-right: 110px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 #world_map {
@@ -57,8 +57,8 @@
   font-weight: lighter;
   font-size: 16px;
   margin-top: 10px;
-  margin-left: 110px;
-  margin-right: 110px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 #category_trellis_area {
@@ -78,8 +78,8 @@
   font-weight: lighter;
   font-size: 16px;
   margin-top: 10px;
-  margin-left: 110px;
-  margin-right: 110px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 #region_radial_chart {
@@ -88,8 +88,8 @@
 }
 
 #status_vconcat_bar_chart {
-  bottom: 100px;
-  left: 50px;
+  left: 5px;
+  bottom: 50px;
 }
 
 #italy_map_title {
@@ -104,6 +104,8 @@
   font-weight: lighter;
   font-size: 16px;
   margin-top: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 #italy_map {
@@ -123,8 +125,8 @@
   font-weight: lighter;
   font-size: 16px;
   margin-top: 10px;
-  margin-left: 110px;
-  margin-right: 110px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 #scatterplot_revenue_comparison {
@@ -144,8 +146,8 @@
   font-weight: lighter;
   font-size: 16px;
   margin-top: 10px;
-  margin-left: 110px;
-  margin-right: 110px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 #italy_type_visitors_lollipop {
