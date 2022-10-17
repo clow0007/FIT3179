@@ -13,6 +13,13 @@
   background-color: teal;
 }
 
+#page_description {
+  text-align: center;
+  font-family: 'Lucida Sans';
+  font-weight: lighter;
+  font-size: 16px;
+}
+
 #content-background {
   background-color: aliceblue;
   text-align: center;
